@@ -1,6 +1,6 @@
 // .vuepress/config.js
-base: /RaspberryPi/
 module.exports = {
+  base: "/pi/",
   title: '树莓派中文文档',
   description: '树莓派中文文档，Rasperry pi文档, 树莓派资料，树莓派新手教程，树莓派使用',
   head: [
