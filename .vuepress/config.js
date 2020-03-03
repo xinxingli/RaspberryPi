@@ -20,8 +20,31 @@ module.exports = {
         '',
         'start',  /* /foo/one.html */
         'raspberry_pi_version'   /* /foo/two.html */
-      ]},
-    sidebarDepth: 3 ,
+      ],
+    '/basis/': [
+      '',
+      'commmand',
+      'power',
+      'raspi',
+      'sudo',
+      'network',
+      'wifi',
+      'HDMI_config',
+      'led_blink_warnings',
+      'cron',
+      'frequency-management',
+      'warning-icons',
+      'raspberry_music',
+      'raspberry_wordpress',
+      'raspberry_pi_version',
+      ],
+    '/advanced/': [
+      '',
+      'service',
+      'info_python',
+      ],
+    },
+    sidebarDepth: 2 ,
     lastUpdated: 'Last Updated',
     smoothScroll: true,
     displayAllHeaders: true, // 默认值：false
