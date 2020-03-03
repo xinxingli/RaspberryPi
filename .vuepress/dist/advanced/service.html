@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>创建系统服务 | 树莓派中文文档</title>
+    <meta name="description" content="树莓派中文文档，Rasperry pi文档, 树莓派资料，树莓派新手教程，树莓派使用">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/pi/favicon.ico">
+    
+    <link rel="preload" href="/pi/assets/css/0.styles.5c724150.css" as="style"><link rel="preload" href="/pi/assets/js/app.ff767d81.js" as="script"><link rel="preload" href="/pi/assets/js/2.e93d176b.js" as="script"><link rel="preload" href="/pi/assets/js/8.dc2c79cf.js" as="script"><link rel="prefetch" href="/pi/assets/js/10.7ff561e9.js"><link rel="prefetch" href="/pi/assets/js/11.aa42a1cd.js"><link rel="prefetch" href="/pi/assets/js/12.95401ce6.js"><link rel="prefetch" href="/pi/assets/js/13.a63371e2.js"><link rel="prefetch" href="/pi/assets/js/14.f344eacf.js"><link rel="prefetch" href="/pi/assets/js/15.ff5c5d72.js"><link rel="prefetch" href="/pi/assets/js/16.53bfcb16.js"><link rel="prefetch" href="/pi/assets/js/17.71b2599a.js"><link rel="prefetch" href="/pi/assets/js/18.9f4abbc9.js"><link rel="prefetch" href="/pi/assets/js/19.38d54555.js"><link rel="prefetch" href="/pi/assets/js/20.0b8ad632.js"><link rel="prefetch" href="/pi/assets/js/21.27576bd1.js"><link rel="prefetch" href="/pi/assets/js/22.b6c5e408.js"><link rel="prefetch" href="/pi/assets/js/23.84fd5629.js"><link rel="prefetch" href="/pi/assets/js/24.fd0eff8f.js"><link rel="prefetch" href="/pi/assets/js/25.f430832e.js"><link rel="prefetch" href="/pi/assets/js/26.26b71d3b.js"><link rel="prefetch" href="/pi/assets/js/27.d87d8127.js"><link rel="prefetch" href="/pi/assets/js/3.e26c70aa.js"><link rel="prefetch" href="/pi/assets/js/4.20bb8b7a.js"><link rel="prefetch" href="/pi/assets/js/5.7a104a15.js"><link rel="prefetch" href="/pi/assets/js/6.f5204458.js"><link rel="prefetch" href="/pi/assets/js/7.3cd11421.js"><link rel="prefetch" href="/pi/assets/js/9.258cdd28.js">
+    <link rel="stylesheet" href="/pi/assets/css/0.styles.5c724150.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/pi/" class="home-link router-link-active"><!----> <span class="site-name">树莓派中文文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/pi/" class="nav-link">首页</a></div><div class="nav-item"><a href="/pi/start/" class="nav-link">快速上手</a></div><div class="nav-item"><a href="/pi/basis/" class="nav-link">基础知识</a></div><div class="nav-item"><a href="/pi/advanced/" class="nav-link router-link-active">高手进阶</a></div><div class="nav-item"><a href="http://www.lxx1.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科技爱好者博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/pi/" class="nav-link">首页</a></div><div class="nav-item"><a href="/pi/start/" class="nav-link">快速上手</a></div><div class="nav-item"><a href="/pi/basis/" class="nav-link">基础知识</a></div><div class="nav-item"><a href="/pi/advanced/" class="nav-link router-link-active">高手进阶</a></div><div class="nav-item"><a href="http://www.lxx1.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科技爱好者博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pi/advanced/" class="sidebar-link">高手进阶</a></li><li><a href="/pi/advanced/service.html" class="active sidebar-link">创建系统服务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pi/advanced/service.html#创建服务" class="sidebar-link">创建服务</a></li></ul></li><li><a href="/pi/advanced/info_python.html" class="sidebar-link">树莓派CPU、GPU、磁盘、内存、负载监控脚本</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="创建系统服务"><a href="#创建系统服务" class="header-anchor">#</a> 创建系统服务</h1> <p>为了在树莓派启动时运行命令或程序，您可以将其添加为服务。完成此操作后，您可以从linux提示符下启动/停止。</p> <h2 id="创建服务"><a href="#创建服务" class="header-anchor">#</a> 创建服务</h2> <p>在您的树莓派上，为您的服务创建一个.service文件，例如：</p> <p>myscript.service</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>My <span class="token function">service</span>
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/python3 -u main.py
+<span class="token assign-left variable">WorkingDirectory</span><span class="token operator">=</span>/home/pi/myscript
+<span class="token assign-left variable">StandardOutput</span><span class="token operator">=</span>inherit
+<span class="token assign-left variable">StandardError</span><span class="token operator">=</span>inherit
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>always
+<span class="token assign-left variable">User</span><span class="token operator">=</span>pi
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+</code></pre></div><p>因此，在这种情况下，该服务将在包含要运行的python程序的工作目录<code>/home/pi/myscript</code>中运行<code>python3 -u main.py</code>。但您不仅限于Python程序：只需将ExecStart行更改为要从引导中运行的任何程序/脚本命令即可。</p> <p>将此文件复制为根用户<code>/etc/systemd/system</code>，例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">cp</span> myscript.service /etc/systemd/system/myscript.service
+</code></pre></div><p>复制完成后，您可以尝试使用以下命令启动服务：</p> <div class="language- extra-class"><pre class="language-text"><code>sudo systemctl start myscript.service
+</code></pre></div><p>使用以下命令停止它：</p> <div class="language- extra-class"><pre class="language-text"><code>sudo systemctl stop myscript.service
+</code></pre></div><p>当您对启动和停止应用感到满意时，可以使用以下命令在重新启动时自动启动它：</p> <div class="language- extra-class"><pre class="language-text"><code>sudo systemctl enable myscript.service
+</code></pre></div><p>该<code>systemctl</code>命令还可以用于重新启动服务或从启动中禁用它！</p> <p>要注意的一些事情：</p> <ul><li>事物开始的顺序取决于它们的依赖关系—在网络可用之后，该特定脚本应在启动过程中相当晚地开始</li> <li>您可以根据需要配置不同的依赖关系和顺序。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">3/3/2020, 10:51:21 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pi/advanced/" class="prev router-link-active">
+          高手进阶
+        </a></span> <span class="next"><a href="/pi/advanced/info_python.html">
+          树莓派CPU、GPU、磁盘、内存、负载监控脚本
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/pi/assets/js/app.ff767d81.js" defer></script><script src="/pi/assets/js/2.e93d176b.js" defer></script><script src="/pi/assets/js/8.dc2c79cf.js" defer></script>
+  </body>
+</html>
